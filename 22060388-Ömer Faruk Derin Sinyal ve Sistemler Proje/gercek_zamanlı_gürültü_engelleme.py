@@ -77,14 +77,14 @@ saved_audio = []
 def process_audio(data, outdata, frames, time_info, status):
     global out_buf, weight_buf, in_buf, buf_pos, old_gains
     
-    floor_level = 0.02
+    floor_level = 0.05
     amp_gain = 2.0
     smooth_factor = 0.5
     low_band = (0, 300)
     mid_band = (300, 3400)
     high_band = (3400, 8000)
     bands = [low_band, mid_band, high_band]
-    reduce_factors = [20.0, 6.0, 20.0]
+    reduce_factors = [5.0, 2.0, 5.0]
     
     window = np.zeros(frame_len)
     for i in range(frame_len):
@@ -137,9 +137,9 @@ def process_audio(data, outdata, frames, time_info, status):
     output[valid_mask] = out_buf[:frames][valid_mask] / weight_buf[:frames][valid_mask]
     output *= amp_gain
     
-    quiet_level = 0.01
+    quiet_level = 0.02
     quiet_mask = np.abs(output) < quiet_level
-    output[quiet_mask] *= 0.05
+    output[quiet_mask] *= 0.08
     
     outdata[:, 0] = np.clip(output, -1.0, 1.0)
     saved_audio.append(outdata[:, 0].copy())
