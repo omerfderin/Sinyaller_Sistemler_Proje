@@ -1,6 +1,13 @@
 # Sinyaller_Sistemler_Proje
 Dönem sonu projesi-gürültü giderme ve ses temizleme sistemi.
 
+## Gerekli Kütüphaneler
+
+Gerekli kütüphaneleri yüklemek için :
+pip install soundfile 
+pip install numpy 
+pip install sounddevice
+
 ## gürültü_engelleme.py Nasıl çalışır ?
 
 Programı herhangi bir ide üzerinden çalıştırın (ya da terminalde py gürültü.py). Sonrasında gürültüsü giderilecek olan dosya adını giriniz (örn : kalabalık.wav) ardından temizlenmiş sesin kaydedileceği dosyanın ismini giriniz (örn : kalabalık_temiz.wav) böylece temizlenmiş ses dosyaya kaydedilecektir.
