@@ -4,9 +4,11 @@ Dönem sonu projesi-gürültü giderme ve ses temizleme sistemi.
 ## Gerekli Kütüphaneler
 
 Gerekli kütüphaneleri yüklemek için :
+<pre>
 pip install soundfile 
 pip install numpy 
 pip install sounddevice
+</pre>
 
 ## gürültü_engelleme.py Nasıl çalışır ?
 
